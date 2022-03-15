@@ -3,7 +3,6 @@ function which_finger($number)
 {
 
     // define
-    $default_index = 0;
     $finger = [
         'pinky left hand',
         'ring finger left hand',
@@ -18,13 +17,10 @@ function which_finger($number)
     ];
 
     // process
-    for ($i = 0; $i < $number; $i++) {
-        $default_index = $default_index > 9 ? 0 : $default_index;
-        $default_index++;
-    }
+    $index = ($number % 10) - 1;
 
     // output
-    return $finger[$default_index - 1] . "<br />";
+    return $finger[$index] . "<br />";
 }
 
 // call function
